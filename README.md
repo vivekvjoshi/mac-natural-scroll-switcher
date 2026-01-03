@@ -1,16 +1,23 @@
-# macOS Natural Scroll Toggler . Alternative to Linear Mouse (0 Background RAM)
+# Mac Natural Scroll Switcher 🖱️🖐️
 
-A simple, lightweight script for macOS (optimized for Apple Silicon/M1) that toggles **Natural Scrolling** on and off. 
+A "Zero RAM" solution to toggle Natural Scrolling on macOS.
 
-### 🚀 The Problem
-By default, macOS links the scroll direction for both the Trackpad and an external Mouse. If you want "Natural" for Trackpad but "Standard" for a Mouse, you normally have to change it manually in Settings every time.
+## 🚀 Why this exists
+On macOS, the "Natural Scrolling" setting is global. If you turn it on for your Trackpad, it also turns on for your Mouse—which feels backwards for most users. 
 
-### 🛠️ The Solution
-This script toggles the setting via terminal and refreshes the system preferences instantly using `activateSettings`.
+Most people fix this by installing background apps like **LinearMouse** or **Scroll Reverser**. While those apps are great, they:
+1. Stay running in the background 24/7.
+2. Consume CPU and RAM.
+3. Require Accessibility permissions to monitor all input.
 
-### ⚡ How to use with Shortcuts
-1. Open the **Shortcuts** app on Mac.
-2. Create a new Shortcut.
-3. Add the **"Run Shell Script"** action.
-4. Paste the code from `toggle_scroll.sh`.
-5. Add it to your Menu Bar for one-click switching!
+## ⚡ The Zero RAM Strategy
+This script is a lightweight alternative that runs only when you need it:
+- **Instant Execution:** Toggles the system setting in milliseconds.
+- **Native:** Uses `defaults write` and the `SystemAdministration` framework.
+- **Optimized for M1/M2/M3:** Uses `activateSettings -u` to force the change instantly without a logout.
+- **Zero Overhead:** Once the script finishes, it uses **0% CPU** and **0MB RAM**.
+
+## 🛠️ How to use
+1. Copy the code into a **Run Shell Script** action in the macOS **Shortcuts** app.
+2. Add the Shortcut to your Menu Bar or assign a Keyboard Shortcut.
+3. Enjoy a bloat-free Mac!
